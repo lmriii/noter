@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Badge } from 'react-bootstrap';
 const marked = require('marked');
+
 
 
 
@@ -9,21 +10,8 @@ const marked = require('marked');
 export default function Noter() {
     const [rawInput, setRawInput] = useState('');
 
-
-    const markedOutput = () => {
-        const getMarkDown = () => {
-            const rawMark = marked(rawInput);
-            return { __html: rawMark };
-        };
-        return (<div dangerouslySetInnerHTML={getMarkDown()}></div>);
-    }
-
-
-
-    console.log(rawInput, markedOutput)
-    // console.log(marked(rawInput))
     const inputStyle = {
-        width: "400px",
+        width: "350px",
         height: "50vh",
         marginLeft: "auto",
         marginRight: "auto",
@@ -32,12 +20,13 @@ export default function Noter() {
     };
 
     const outputStyle = {
-        width: "400px",
+        width: "350px",
         height: "50vh",
         marginLeft: "auto",
         marginRight: "auto",
         padding: "10px",
-        backgroundColor: "#DCDCDC"
+        backgroundColor: "blue",
+        whiteSpace: "pre-wrap"
     };
 
     return (
@@ -53,34 +42,32 @@ export default function Noter() {
                     </div>
                 </div>
                 <div className='row mt-4'>
-                    <div className='col-md-6'>
+                    <div className='col-md-6' >
                         <h4>
                             <Badge className='text-align-center text-danger bg-dark'>
                                 Raw Input
                             </Badge>
                         </h4>
-                        <div className='mark-input' style={inputStyle}>
+                        <div className='mark-input' style={{ width: "100%", height: "100%" }}>
                             <textarea
                                 className='input'
-                                style={{ width: "100%", height: "100%" }}
-
+                                style={{ width: "100%", height: "100%", backgroundColor: "skyBlue", boxShadow:"5px 5px" }}
                                 onChange={e => { setRawInput(e.target.value) }}
                             ></textarea>
                         </div>
                     </div>
-                    <div className='col-md-6'>
+                    <div className='col-md-6' style={{height: "600px"}}>
                         <h4>
                             <Badge className='text-align-center text-info bg-dark'>
                                 Preview
                             </Badge>
                         </h4>
+                        <div style={{whiteSpace: "pre-wrap", backgroundColor: "grey", boxShadow:"5px 5px", textAlign: "left", border: "solid", width: "100%", height: "100%"}} className='text-align-left'>
+                    {rawInput}
                     </div>
-                    <div style={outputStyle} >
-
-                        {/* {markedOutput} */}
                     </div>
+                    
                 </div>
-
             </div>
         </>
 
