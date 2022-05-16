@@ -8,7 +8,7 @@ require('dotenv').config();
 
 
 // middleware
-app.use(express.static('./public'))
+app.use(express.static('../../public/notes.html'))
 app.use(express.json());
  
 
@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use('/api/v1/articles', articles);
 
-const port = 4001;
+const port = 4050;
 
 const start = async () => {
     try {

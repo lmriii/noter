@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Badge } from 'react-bootstrap';
-const marked = require('marked');
+
 
 
 
@@ -51,22 +51,22 @@ export default function Noter() {
                         <div className='mark-input' style={{ width: "100%", height: "100%" }}>
                             <textarea
                                 className='input'
-                                style={{ width: "100%", height: "100%", backgroundColor: "skyBlue", boxShadow:"5px 5px" }}
+                                style={{ width: "100%", height: "100%", backgroundColor: "skyBlue", boxShadow: "5px 5px" }}
                                 onChange={e => { setRawInput(e.target.value) }}
                             ></textarea>
                         </div>
                     </div>
-                    <div className='col-md-6' style={{height: "600px"}}>
+                    <div className='col-md-6' style={{ height: "600px" }}>
                         <h4>
                             <Badge className='text-align-center text-info bg-dark'>
                                 Preview
                             </Badge>
                         </h4>
-                        <div style={{whiteSpace: "pre-wrap", backgroundColor: "grey", boxShadow:"5px 5px", textAlign: "left", border: "solid", width: "100%", height: "100%"}} className='text-align-left'>
-                    {rawInput}
+                        <div style={{ whiteSpace: "pre-wrap", backgroundColor: "grey", boxShadow: "5px 5px", textAlign: "left", border: "solid", width: "100%", height: "100%" }} className='text-align-left'>
+                            {rawInput}
+                        </div>
                     </div>
-                    </div>
-                    
+
                 </div>
             </div>
         </>
