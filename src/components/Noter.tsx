@@ -3,21 +3,18 @@ import { Badge } from 'react-bootstrap';
 
 
 interface rawInput{
-    title: string;
+    title: any;
     date?: any;
-    note: string;
+    note: any;
 }
 
-
+ 
 
 //Note Recorder = Noter
 export default function Noter() {
-    const [rawInput, setRawInput] = useState({
-        title: '',
-        date: '',
-        note: '',
-
-    });
+    const [title, setTitle] = useState('');
+    const [date, setDate] = useState('');
+    const [note, setNote] = useState('');
 
     const inputStyle = {
         width: "350px",
@@ -64,7 +61,7 @@ export default function Noter() {
                                 className='input'
                                 placeholder='Title'
                                 style={{ width: "100%", backgroundColor: "skyBlue", boxShadow: "5px 5px" }}
-                                onChange={e => { rawInput.title = setRawInput(e.target.value) }}
+                                onChange={e => { setTitle(e.target.value) }}
                             ></input>
                         </div>
                     </div>
@@ -76,7 +73,7 @@ export default function Noter() {
                             </Badge>
                         </h4>
                         <div style={{ whiteSpace: "pre-wrap", backgroundColor: "grey", boxShadow: "5px 5px", textAlign: "left", border: "solid", width: "100%" }} className='text-align-left'>
-                            {rawInput.title}
+                            {title}
                         </div>
                     </div>
 
@@ -94,7 +91,7 @@ export default function Noter() {
                                 className='input'
                                 placeholder='Date note was taken'
                                 style={{ width: "100%", backgroundColor: "skyBlue", boxShadow: "5px 5px" }}
-                                onChange={e => { rawInput.date = setRawInput(e.target.value) }}
+                                onChange={e => { setDate(e.target.value) }}
                             ></input>
                         </div>
                     </div>
@@ -106,7 +103,7 @@ export default function Noter() {
                             </Badge>
                         </h4>
                         <div style={{ whiteSpace: "pre-wrap", backgroundColor: "grey", boxShadow: "5px 5px", textAlign: "left", border: "solid", width: "100%" }} className='text-align-left'>
-                            {rawInput.date}
+                            {date}
                         </div>
                     </div>
 
@@ -132,7 +129,7 @@ export default function Noter() {
                                 className='input'
                                 placeholder='Enter notes here'
                                 style={{ width: "100%", height: "100%", backgroundColor: "skyBlue", boxShadow: "5px 5px" }}
-                                onChange={e => { rawInput.note = setRawInput(e.target.value) }}
+                                onChange={e => { setNote(e.target.value) }}
                             ></textarea>
                         </div>
                     </div>
@@ -143,7 +140,7 @@ export default function Noter() {
                             </Badge>
                         </h4>
                         <div style={{ whiteSpace: "pre-wrap", backgroundColor: "grey", boxShadow: "5px 5px", textAlign: "left", border: "solid", width: "100%", height: "100%" }} className='text-align-left'>
-                            {rawInput.note}
+                            {note}
                         </div>
                     </div>
 
