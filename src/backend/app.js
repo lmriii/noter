@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const articles = require('./controllers/routes/articles');
+const notes = require('./controllers/routes/notes');
 const connectDB = require('./db/connect');
 require('dotenv').config();
 
@@ -14,7 +14,7 @@ app.use(express.json());
 
 // routes
 
-app.use('/api/v1/articles', articles);
+app.use('/api/v1/notes', notes);
 
 const port = 4050;
 

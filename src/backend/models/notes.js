@@ -1,23 +1,23 @@
 const mongoose = require('mongoose');
 
 
-const ArticleSchema = new mongoose.Schema({
+const NoteSchema = new mongoose.Schema({
     title : {
         type: String,
         required: [true, 'must provide a title'],
         trim: true,
         maxlength: [50, 'title must be 50 characters or less']
     },
-    published: {
-        type: Boolean,
+    date: {
+        type: Date,
         default: false
     },
-    content: {
+    note: {
         type: String,
-        // required: [true, 'please provide content'],
+        required: [true, 'please provide content'],
         trim: true,
 
     }
 }); 
 
-module.exports = mongoose.model('Article', ArticleSchema)
+module.exports = mongoose.model('Note', NoteSchema)
