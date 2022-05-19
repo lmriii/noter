@@ -3,6 +3,8 @@ const router = express.Router();
 
 const { getAllNotes, createNote, getNote, updateNote, deleteNote } = require('../notesControlers');
 
+// routes
+
 router.route('/').get(getAllNotes).post(createNote);
 router.route('/:id').get(getNote).patch(updateNote).delete(deleteNote);
 

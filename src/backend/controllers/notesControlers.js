@@ -1,5 +1,7 @@
 // getting mongoose schema for our db
-const Note = require('../models/Notes');
+const Note = require('../models/notes');
+
+// controllers 
 
 const getAllNotes = async (req, res, next) => {
     try {

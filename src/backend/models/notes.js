@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// preliminary schema. 
 
 const NoteSchema = new mongoose.Schema({
     title : {
